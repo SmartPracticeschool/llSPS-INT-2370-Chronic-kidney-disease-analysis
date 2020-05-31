@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<style>
+    .navbar-text h1 {
+        color: #fff;
+        font-size: 40px;
+        align-content: center;
+    }
+    
+    body {
+        background-color: grey;
+    }
+    
+    form {
+        margin-top: 50px;
+        margin: auto;
+        width: 35%;
+        ;
+    }
+    
+    .result {
+        margin: auto;
+        width: 35%;
+        border: 1px solid #ccc;
+        background-color: grey;
+        color: #fff;
+        padding: 20px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        transition: 0.3s;
+        ;
+    }
+</style>
+
+<head>
+    <title>House Price Prediction</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <nav class="navbar navbar-light bg-dark">
+        <span class="navbar-text">
+            <h1>Chronic Kidney Disease Predictor</h1>
+        </span>
+    </nav>
+  
+<div> 
+  <form action="{{ url_for('predict')}}"method="post">
+    <label for="age">Age</label> 
+    <input type="number" id="age" name="age"> 
+    <br> 
+    <label for="bp">Blood Pressure</label> 
+    <input type="number" id="bp" name="bp"> 
+    <br> 
+    <label for="sg">Sugar</label> 
+    <input type="number" id="sg" name="sg"> 
+    <br> 
+    <label for="al">Amyloid</label> 
+    <input type="number" id="al" name="al"> 
+    <br> 
+    <label for="su">SU</label> 
+    <input type="number" id="su" name="su"> 
+    <br> 
+    <label for="rbc">RBC</label> 
+    <select id="rbc" name="rbc"> 
+      <option value="0">Abnormal</option> 
+      <option value="1">Normal</option> 
+       
+    </select> 
+    <br> 
+    <label for="pc">PC</label> 
+    <select id="pc" name="pc"> 
+      <option value="0">Abnormal</option> 
+      <option value="1">Normal</option> 
+    </select> 
+    <br> 
+    <label for="pcc">PCC</label> 
+    <select id="pcc" name="pcc"> 
+      <option value="0">Not-present</option> 
+      <option value="1">Present</option> 
+    </select> 
+    <br> 
+    <label for="ba">BA</label> 
+    <select id="ba" name="ba"> 
+      <option value="0">Not-present</option> 
+      <option value="1">Present</option> 
+    </select> 
+    <br> 
+    <label for="bgr">BGR </label> 
+    <input type="number" id="bgr" name="bgr">
+    <br> 
+    <label for="bu">BU </label> 
+    <input type="number" id="bu" name="bu">
+    <br> 
+    <label for="sc">SC </label> 
+    <input type="number" id="sc" name="sc">
+    <br> 
+     <label for="sod">SOD </label> 
+    <input type="number" id="sod" name="sod">
+    
+    <br>
+    <label for="pot">POT </label> 
+    <input type="number" id="pot" name="pot">
+    
+    <br>
+    <label for="hemo">Hemoglobin </label> 
+    <input type="number" id="hemo" name="hemo">
+    
+    <br>
+    <label for="pcv">PCV </label> 
+    <input type="number" id="pcv" name="pcv">
+    
+    <br>
+    <label for="wc">WC </label> 
+    <input type="number" id="wc" name="wc">
+    
+    <br>
+    <label for="rc">RC </label> 
+    <input type="number" id="rc" name="rc">
+    
+    <br>
+    <label for="htn">HTN</label> 
+    <select id="htn" name="htn"> 
+      <option value="0">No</option> 
+      <option value="1">Yes</option> 
+       
+    </select> 
+    <br> 
+    <label for="dm">DM</label> 
+    <select id="dm" name="dm"> 
+      <option value="0">No</option> 
+      <option value="1">Yes</option> 
+       
+    </select> 
+    <br>
+    <label for="cad">CAD</label> 
+    <select id="cad" name="cad"> 
+      <option value="0">No</option> 
+      <option value="1">Yes</option> 
+       
+    </select> 
+    <br>
+    <label for="appet">APPET</label> 
+    <select id="appet" name="appet"> 
+      <option value="0">Good</option> 
+      <option value="1">Poor</option> 
+       
+    </select> 
+    <br>
+    <label for="pe">PE</label> 
+    <select id="pe" name="pe"> 
+      <option value="0">No</option> 
+      <option value="1">Yes</option> 
+       
+    </select> 
+    <br>
+    <label for="ane">ANE</label> 
+    <select id="ane" name="ane"> 
+      <option value="0">No</option> 
+      <option value="1">Yes</option> 
+       
+    </select> 
+    <br>
+    <input type="submit" value="Submit"> 
+  </form> 
+  <br>
+  <br>
+   <h1> {{ prediction }} </h1>
+</div> 
+    
+
+</body> 
+</html>
