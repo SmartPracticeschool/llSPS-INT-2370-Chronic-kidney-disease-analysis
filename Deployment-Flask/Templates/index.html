@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+
+<head>
+    <meta charset="UTF-8">
+    <title>ML API</title>
+    <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+    <h3>Chronic Kidney Disease Prediction Form</h3>
+    
+    <div>
+            <label for="age">Age</label>
+            <input type="number" id="age" name="age">
+            <br>
+            <label for="bp">Blood Pressure</label>
+            <input type="number" id="bp" name="bp">
+            <br>
+            <label for="sg">Sugar</label>
+            <input type="number" id="sg" name="sg">
+            <br>
+            <label for="al">Amyloid</label>
+            <input type="number" id="al" name="al">
+            <br>
+            <label for="su">SU</label>
+            <input type="number" id="su" name="su">
+            <br>
+            <label for="rbc">RBC</label>
+            <select id="rbca" name="rbc" onChange="rbcfn()">
+                <option value="0">Normal</option>
+                <option value="1">Abnormal</option>
+            </select>
+            <br>
+            <label for="pc">PC</label>
+            <select id="pca" name="pc" onChange="pcfn()">
+                <option value="0">Normal</option>
+                <option value="1">Abnormal</option>
+            </select>
+            <br>
+            <label for="pcc">PCC</label>
+            <select id="pcc" name="pcc">
+                <option value="0">Not-present</option>
+                <option value="1">Present</option>
+            </select>
+            <br>
+            <label for="ba">BA</label>
+            <select id="ba" name="ba">
+                <option value="0">Not-present</option>
+                <option value="1">Present</option>
+            </select>
+            <br>
+            <label for="bgr">BGR </label>
+            <input type="number" id="bgr" name="bgr">
+            <br>
+            <label for="bu">BU </label>
+            <input type="number" id="bu" name="bu">
+            <br>
+            <label for="sc">SC </label>
+            <input type="number" id="sc" name="sc">
+            <br>
+            <label for="sod">SOD </label>
+            <input type="number" id="sod" name="sod">
+            <br>
+            <label for="pot">POT </label>
+            <input type="number" id="pot" name="pot">
+            <br>
+            <label for="hemo">Hemoglobin </label>
+            <input type="number" id="hemo" name="hemo">
+            <br>
+            <label for="pcv">PCV </label>
+            <input type="number" id="pcv" name="pcv">
+            <br>
+            <label for="wc">WC </label>
+            <input type="number" id="wc" name="wc">
+            <br>
+            <label for="rc">RC </label>
+            <input type="number" id="rc" name="rc">
+            <br>
+            <label for="htn">HTN</label>
+            <select id="htn" name="htn">
+                <option value="0">No</option>
+                <option value="1">Yes</option>
+            </select>
+            <br>
+            <label for="dm">DM</label>
+            <select id="dm" name="dm">
+                <option value="0">No</option>
+                <option value="1">Yes</option>
+            </select>
+            <br>
+            <label for="cad">CAD</label>
+            <select id="cad" name="cad">
+                <option value="0">No</option>
+                <option value="1">Yes</option>
+            </select>
+            <br>
+            <label for="appet">APPET</label>
+            <select id="appet" name="appet">
+                <option value="0">Good</option>
+                <option value="1">Poor</option>
+            </select>
+            <br>
+            <label for="pe">PE</label>
+            <select id="pe" name="pe">
+                <option value="0">No</option>
+                <option value="1">Yes</option>
+            </select>
+            <br>
+            <label for="ane">ANE</label>
+            <select id="ane" name="ane">
+                <option value="0">No</option>
+                <option value="1">Yes</option>
+            </select>
+            <br>
+            <button onClick="result()">Submit</button>
+                            <p id="data"></p>
+
+    </div>
+    <script>
+    
+function result(){
+    var x = document.getElementById("rbca").value;
+    var y = document.getElementById("pca").value;
+
+if(x==1 || y==1)
+document.getElementById("data").innerHTML = "The disease is chronic";
+
+else if(x==0 && y==0)
+document.getElementById("data").innerHTML = "The disease is not chronic";
+return false;
+}
+    </script>
+    
+</body>
+
+</html>
